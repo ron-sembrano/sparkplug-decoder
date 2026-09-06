@@ -8,10 +8,10 @@
  */
 
 plugins {
-    id("io.ia.sdk.modl") version("1.0.0")
+    id("io.ia.sdk.modl") version("0.5.0")
 }
 
-val sdk_version by extra("8.1.20")
+val sdk_version by extra("8.3.9")
 
 allprojects {
     version = "0.0.1-SNAPSHOT"
@@ -37,7 +37,7 @@ ignitionModule {
      */
     moduleVersion.set("${project.version}")
 
-    moduleDescription.set("A short sentence describing what it does, but not much longer than this.")
+    moduleDescription.set("Decodes Sparkplug B birth-certificate payloads into a plain Jython dict for use in Gateway scripts.")
 
     /*
      * Minimum version of Ignition required for the module to function correctly.  This typically won't change over
@@ -112,5 +112,5 @@ ignitionModule {
      * Optional unsigned modl settings. If true, modl signing will be skipped. This is not for production and should
      * be used merely for development testing
      */
-    skipModlSigning.set(false)
+    skipModlSigning.set(true)
 }
