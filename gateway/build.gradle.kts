@@ -12,4 +12,5 @@ dependencies {
     compileOnly("com.inductiveautomation.ignitionsdk:ignition-common:${rootProject.extra["sdk_version"]}")
     compileOnly("com.inductiveautomation.ignitionsdk:gateway-api:${rootProject.extra["sdk_version"]}")
     // add gateway scoped dependencies here
+    modlImplementation("org.eclipse.tahu:tahu-core:1.0.21")
 }
