@@ -2,6 +2,7 @@ package com.ronsembrano.sparkplugdecoder.gateway;
 
 import java.util.Optional;
 import com.inductiveautomation.ignition.common.licensing.LicenseState;
+import com.inductiveautomation.ignition.common.script.ScriptManager;
 import com.inductiveautomation.ignition.gateway.dataroutes.RouteGroup;
 import com.inductiveautomation.ignition.gateway.model.AbstractGatewayModuleHook;
 import com.inductiveautomation.ignition.gateway.model.GatewayContext;
@@ -79,4 +80,10 @@ public class SparkplugBBirthDecoderGatewayHook extends AbstractGatewayModuleHook
         return false;
     }
 
+    @Override
+    public void initializeScriptManager(ScriptManager manager) {
+        super.initializeScriptManager(manager);
+        manager.addScriptModule("system.ron", new SparkplugDecoderScriptModule());
+        logger.info("initializeScriptManager ran, registered system.ron");
+    }
 }
