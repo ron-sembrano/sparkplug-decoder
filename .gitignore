@@ -31,3 +31,4 @@ replay_pid*
 
 # Build output
 build/
+.DS_Store
